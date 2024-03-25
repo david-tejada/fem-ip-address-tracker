@@ -5,7 +5,13 @@ export default {
     fontFamily: {
       sans: ["Rubik", "sans-serif"],
     },
-    extend: {},
+    colors: {
+      white: "hsl(0deg, 0%, 100%)",
+      gray: {
+        400: "hsl(0, 0%, 59%)",
+        800: "hsl(0, 0%, 17%)",
+      },
+    },
   },
   plugins: [],
 };

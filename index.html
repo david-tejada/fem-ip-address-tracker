@@ -15,6 +15,26 @@
       <h1 class="text-center text-2xl font-bold text-white">
         IP Address Tracker
       </h1>
+      <form action="">
+        <div
+          class="relative mx-auto mt-4 max-w-[50ch] overflow-hidden rounded-xl text-lg"
+        >
+          <input
+            class="w-full p-4"
+            type="text"
+            name="query"
+            id="query"
+            placeholder="Search for any IP address or domain"
+          />
+          <button
+            class="absolute right-0 top-0 h-full bg-gray-800 p-4"
+            type="submit"
+          >
+            <span class="sr-only">Search</span>
+            <img src="/icon-arrow.svg" alt="" />
+          </button>
+        </div>
+      </form>
     </header>
     <script type="module" src="/src/main.ts"></script>
   </body>

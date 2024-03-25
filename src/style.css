@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Rubik";
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("./assets/fonts/League_Spartan/Rubik-VariableFont_wght.ttf");
+  }
+}

@@ -2,6 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.ts"],
   theme: {
+    fontFamily: {
+      sans: ["Rubik", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [],

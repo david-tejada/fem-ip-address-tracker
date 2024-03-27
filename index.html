@@ -17,15 +17,15 @@
       </h1>
 
       <div class="relative mb-36 grid sm:mb-12">
-        <form action="">
+        <form id="js-search">
           <div
             class="relative mx-auto mt-4 max-w-[50ch] overflow-hidden rounded-xl text-lg"
           >
             <input
               class="w-full p-4"
               type="text"
-              name="query"
-              id="query"
+              name="search"
+              id="search"
               placeholder="Search for any IP address or domain"
             />
             <button
@@ -43,29 +43,32 @@
         >
           <li>
             <p class="text-xs uppercase text-gray-400">IP address</p>
-            <p class="mt-1 text-lg">192.212.174.101</p>
+            <p id="js-ip" class="mt-1 text-lg">--</p>
           </li>
           <li
             class="relative before:left-0 before:top-1/2 before:h-5/6 before:w-[1px] before:-translate-y-1/2 before:bg-gray-400/50 sm:pl-6 sm:before:absolute"
           >
             <p class="text-xs uppercase text-gray-400">Location</p>
-            <p class="mt-1 text-lg">Brooklyn, NY 10001</p>
+            <p id="js-location" class="mt-1 text-lg">--</p>
           </li>
           <li
             class="relative before:left-0 before:top-1/2 before:h-5/6 before:w-[1px] before:-translate-y-1/2 before:bg-gray-400/50 sm:pl-6 sm:before:absolute"
           >
             <p class="text-xs uppercase text-gray-400">Timezone</p>
-            <p class="mt-1 text-lg">UTC -05:00</p>
+            <p id="js-timezone" class="mt-1 text-lg">--</p>
           </li>
           <li
             class="relative before:left-0 before:top-1/2 before:h-5/6 before:w-[1px] before:-translate-y-1/2 before:bg-gray-400/50 sm:pl-6 sm:before:absolute"
           >
             <p class="text-xs uppercase text-gray-400">ISP</p>
-            <p class="mt-1 text-lg">SpaceX Starlink</p>
+            <p id="js-isp" class="mt-1 text-lg">--</p>
           </li>
         </ul>
       </div>
     </header>
+
+    <main></main>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

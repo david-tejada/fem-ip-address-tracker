@@ -8,7 +8,7 @@ const handler: Handler = async (event) => {
   const clientIp = event.headers["x-nf-client-connection-ip"];
   const isLocalhost = clientIp === "127.0.0.1" || clientIp === "::1";
 
-  const q = event.queryStringParameters?.q || isLocalhost ? "" : clientIp;
+  const q = event.queryStringParameters?.q || (isLocalhost ? "" : clientIp);
 
   try {
     const domainQuery = q ? `&domain=${q}` : "";

@@ -1,3 +1,5 @@
+import L from "leaflet";
+
 type LocationDataError = { code: number; messages: string };
 type LocationData = {
   ip: number;
@@ -13,6 +15,17 @@ type LocationData = {
 type LocationDataResponse = LocationDataError | LocationData;
 
 const searchForm = document.querySelector<HTMLFormElement>("#js-search");
+const map = L.map("map", { zoomControl: false }).setView([51.505, -0.09], 13);
+L.control
+  .zoom({
+    position: "bottomleft",
+  })
+  .addTo(map);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
 
 const pIp = document.querySelector("#js-ip")!;
 const pLocation = document.querySelector("#js-location")!;

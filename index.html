@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | IP Address Tracker</title>
   </head>
-  <body class="bg-gray-400">
+  <body class="grid h-screen grid-rows-[auto_1fr]">
     <header
       class="bg-[url('/pattern-bg-mobile.png')] bg-cover bg-no-repeat px-4 py-8 sm:bg-[url('/pattern-bg-desktop.png')]"
     >
@@ -39,7 +45,7 @@
         </form>
 
         <ul
-          class="absolute top-[calc(100%+1rem)] mx-auto mt-4 grid w-full gap-4 rounded-xl bg-white p-6 text-center font-bold sm:grid-flow-col sm:text-left"
+          class="absolute top-[calc(100%+1rem)] z-[1000] mx-auto mt-4 grid w-full gap-4 rounded-xl bg-white p-6 text-center font-bold sm:grid-flow-col sm:text-left"
         >
           <li>
             <p class="text-xs uppercase text-gray-400">IP address</p>
@@ -67,7 +73,9 @@
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <div id="map" class="h-full w-full"></div>
+    </main>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -1,10 +1,12 @@
-import L from "leaflet";
+import { setMapView } from "./map";
 
 type LocationDataError = { code: number; messages: string };
 type LocationData = {
   ip: number;
   isp: string;
   location: {
+    lat: number;
+    lng: number;
     city: string;
     region: string;
     timezone: string;
@@ -15,17 +17,6 @@ type LocationData = {
 type LocationDataResponse = LocationDataError | LocationData;
 
 const searchForm = document.querySelector<HTMLFormElement>("#js-search");
-const map = L.map("map", { zoomControl: false }).setView([51.505, -0.09], 13);
-L.control
-  .zoom({
-    position: "bottomleft",
-  })
-  .addTo(map);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution:
-    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-}).addTo(map);
 
 const pIp = document.querySelector("#js-ip")!;
 const pLocation = document.querySelector("#js-location")!;
@@ -46,6 +37,8 @@ function fillLocation(data: LocationDataResponse) {
   pLocation.textContent = `${data.location.city}, ${data.location.region} ${data.location.postalCode}`;
   pTimezone.textContent = `UTC ${data.location.timezone}`;
   pIsp.textContent = data.isp;
+
+  setMapView(data.location.lat, data.location.lng);
 }
 
 async function fetchLocation(
@@ -70,7 +63,7 @@ searchForm?.addEventListener("submit", async (event) => {
   fillLocation(data);
 });
 
-const userLocation = await fetchLocation();
-fillLocation(userLocation);
+const data = await fetchLocation();
+fillLocation(data);
 
 export {};

@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [david-tejada/fem-ip-address-tracker](https://github.com/david-tejada/fem-ip-address-tracker)
+- Live Site URL: [Frontend Mentor | IP Address Tracker](https://dt-fem-ip-address-tracker.netlify.app/)
 
 ## My process
 
